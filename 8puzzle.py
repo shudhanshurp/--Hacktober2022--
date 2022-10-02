@@ -29,13 +29,17 @@ def up(input0):
 
 def down(input0):
 
-    for i in range(3):
+  for i in range(3):
         for j in range(3):
 
             if (input0[i][j] == 0):
-                temp = input0[i-1][j]
-                input0[i-1][j] = 0
-                input0[i][j] = temp
+                if (i == 2):
+                    print("INVALID MOVES")
+                else:
+                    temp = input0[i+1][j]
+                    input0[i+1][j] = 0
+                    input0[i][j] = temp
+                break
 
     for i in range(3):
         for j in range(3):
