@@ -39,17 +39,17 @@ function getRemTime() {
     const onehour = 60 * 60 * 1000;
     const onemin = 60 * 1000;
 
-    let days = t % oneday;
+    let days = t/oneday;
     days = Math.floor(days);
-    let hours = (t % oneday) % onehour;
+    let hours= (t % oneday)/onehour;
     hours = Math.floor(hours);
-    let mins = (t % onehour) % onemin;
+    let mins = (t % onehour)/onemin;
     mins = Math.floor(mins);
-    let secs = Math.floor((t % onemin) % 1000);
+    let secs = Math.floor((t%onemin)/1000);
 
-    const values = [days, hours, mins, secs];
-    function format(item) {
-        if (item <= 10) {
+    const values = [days,hours,mins,secs];
+    function format(item){
+        if(item < 10){
             return (item = `0${item}`);
         }
         return item;
